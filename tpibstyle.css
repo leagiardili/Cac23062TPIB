@@ -1,0 +1,51 @@
+#headercontainer {
+    background-color: grey;
+}
+
+#navbarSupportedContent {
+    display: flex;
+    justify-content: flex-end;
+}
+
+    #imgcontenedor {
+        width: 100%;
+        height: 100vh;
+        background-image: url('img/ba1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    
+    }
+#divbottom {
+    width: 400px;
+}
+
+.cardclass img {
+    height: 300px;
+}
+
+.cardclass1{
+    margin-right:20px!important;
+    }
+
+#contenedortexto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.horizontal {
+    display:block;
+    width:60%;
+    margin:0 auto;
+}
+
+#texto {
+    text-align: right;
+}
+
+#botones {
+    text-align: right;
+}
