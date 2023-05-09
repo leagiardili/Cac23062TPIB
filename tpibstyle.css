@@ -5,12 +5,7 @@
     background-color: grey;
 }
 
-#navbarSupportedContent {
-//    display: flex;
-//    justify-content: flex-end;
-}
-
-    #imgcontenedor {
+#imgcontenedor {
         width: 100%;
         height: 100vh;
         background-image: url('img/ba1.jpg');
