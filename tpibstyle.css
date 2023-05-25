@@ -1,6 +1,4 @@
 
-
-
 #headercontainer {
     background-color: grey;
 }
@@ -46,4 +44,10 @@
 
 #botones {
     text-align: right;
+}
+
+.cuerpo {
+    width:50%;
+    margin:0 auto;
+    border-width: 5px;
 }
