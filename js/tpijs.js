@@ -73,5 +73,7 @@ function borrar(){
     titulo.value=""
     var titulo = document.getElementById("inputGroupSelect01")
     titulo.value=""
+    var tituloPagina = document.getElementById('error')
+    tituloPagina.textContent=""
     
 }
