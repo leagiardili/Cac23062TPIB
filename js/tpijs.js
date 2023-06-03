@@ -1,4 +1,23 @@
 
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.errormsg');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success')
+}
+
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.errormsg');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
+
 
 
 function calcular(){
@@ -13,23 +32,52 @@ function calcular(){
     let errores = []
     errorElement.innerHTML = ''
 
+    console.log(nCategoria.value);
+
     if (usrnamevalue === '' || usrnamevalue == null) {
-        errores.push('Debe introducir el nombre');   
+        errores.push('Debe introducir el nombre');
+        setError(username, 'Debe introducir el nombre');
+
+    } else {    
+        setSuccess(username);
     }
 
     if (usrlastnamevalue === '' || usrlastnamevalue == null) {
-        errores.push('Debe introducir el apellido');   
+        errores.push('Debe introducir el apellido');
+        setError(userlastname, 'Debe introducir el apellido');   
+    } else {    
+        setSuccess(userlastname);
     }
 
     if (usremailvalue === '' || usremailvalue == null) {
         errores.push('Debe introducir el email');   
+        setError(useremail, 'Debe introducir el email');
+    }
+    else {    
+        setSuccess(useremail);
     }
 
-    if(Number(nCantidad) < 0) {
+    if(Number(nCantidad) <= 0) {
         errores.push('Debe introducir una cantidad positiva'); 
+        setError(cantidadinput, 'Debe introducir una cantidad positiva');
     }
+    else {    
+        setSuccess(cantidadinput);
+    }
+    
+   
+
+    if (nCategoria.value === '' || nCategoria.value === undefined || nCategoria.value === null || nCategoria.value === 'Elija una opción') {
+        errores.push('Debe elegir una categoria');
+        setError(combo, 'Debe introducir una categoría');
+    }
+    else {
+        document.getElementById('categoriaerrmsg').innerText=''
+    }
+
+
     if (errores.length > 0) {
-        errorElement.innerHTML = errores.join(', ')   
+        //errorElement.innerHTML = errores.join(', ')   
         }
     else{
         
@@ -50,12 +98,13 @@ function calcular(){
         var tituloPagina = document.getElementById('totaltext')
         tituloPagina.textContent="Total a Pagar: $ "+nTotal 
 
+        if (nTotal > 0) {
         Swal.fire(
             'Excelente!',
             'Resumen ingresado!',
             'success'
           )
-
+        }     
         }
 };
 
@@ -75,5 +124,4 @@ function borrar(){
     titulo.value=""
     var tituloPagina = document.getElementById('error')
     tituloPagina.textContent=""
-    
 }
