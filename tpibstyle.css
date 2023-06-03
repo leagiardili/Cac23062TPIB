@@ -27,6 +27,11 @@
     margin-right:20px!important;
     }
 
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.36), 0 4px 8px rgba(0,0,0,.06);
+}
+
 #contenedortexto {
     display: flex;
     flex-direction: column;
@@ -51,3 +56,18 @@
     margin:0 auto;
     border-width: 5px;
 }
+
+.col.success input {
+    border-color: #09c372;}
+
+.col.error input {
+    border-color: #ff3860;}
+
+.col.error {
+    color:#ff3860;
+}
+
+#error {
+    color: #ff3860;
+}
+
