@@ -55,7 +55,8 @@
                                     <h4 class="card-title">Estudiante</h4>
                                     <p class="card-text">Tienen un descuento</p>
                                     <h5 class="card-text">80%</h5>
-                                    <p class="card-text"><small class="text-muted">* Presentar Documentación</small></p>
+                                    <p class="card-text"><small class="text-muted">* Presentar Documentación</small></p> 
+                                    <button onclick="setCategory('1')" class="btn btn-link stretched-link" type="button"></button>
                                 </div>
                             </div>
                         </div>
@@ -66,6 +67,7 @@
                                     <p class="card-text">Tienen un descuento</p>
                                     <h5 class="card-text">50%</h5>
                                     <p class="card-text"><small class="text-muted">* Presentar Documentación</small></p>
+                                    <button onclick="setCategory('2')" class="btn btn-link stretched-link" type="button"></button>
                                 </div>
                             </div>
                         </div>
@@ -76,6 +78,7 @@
                                     <p class="card-text">Tienen un descuento</p>
                                     <h5 class="card-text text-black">15%</h5>
                                     <p class="card-text"><small class="text-muted">* Presentar Documentación</small></p>
+                                    <button onclick="setCategory('3')" class="btn btn-link stretched-link" type="button"></button>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +115,7 @@
                                 <div class="row">
                                     <div class="col input-control">
                                         <label for="formGroupExampleInput">Cantidad</label>
-                                        <input id="cantidadinput" name="cantidadinput" type="text" class="form-control" placeholder="Cantidad">
+                                        <input id="cantidadinput" name="cantidadinput" type="number" class="form-control" placeholder="Cantidad">
                                         <div class="errormsg"></div>
                                     </div>
                                     <div class="col input-control">
@@ -142,12 +145,12 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="d-grid gap-2">
-                                            <button onclick="borrar()" class="btn btn-success btn-lg" type="button">Borrar</button>
+                                            <button onclick="clean()" class="btn btn-success btn-lg" type="button">Borrar</button>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="d-grid gap-2">
-                                            <button onclick="calcular() "class="btn btn-success btn-lg" type="button">Resumen</button>
+                                            <button onclick="calc()"class="btn btn-success btn-lg" type="button">Resumen</button>
                                         </div>
                                     </div>
                                 </div> 

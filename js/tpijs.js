@@ -18,9 +18,7 @@ const setSuccess = element => {
 };
 
 
-
-
-function calcular(){
+function calc(){
     const usrnamevalue = document.getElementById('username').value.trim();
     const usrlastnamevalue = document.getElementById("userlastname").value.trim()
     const usremailvalue = document.getElementById("useremail").value.trim()
@@ -29,13 +27,13 @@ function calcular(){
     const nCategoria = document.getElementById("inputGroupSelect01")
     const errorElement = document.getElementById("error")
 
-    let errores = []
+    let errors = []
     errorElement.innerHTML = ''
 
     console.log(nCategoria.value);
 
     if (usrnamevalue === '' || usrnamevalue == null) {
-        errores.push('Debe introducir el nombre');
+        errors.push('Debe introducir el nombre');
         setError(username, 'Debe introducir el nombre');
 
     } else {    
@@ -43,14 +41,14 @@ function calcular(){
     }
 
     if (usrlastnamevalue === '' || usrlastnamevalue == null) {
-        errores.push('Debe introducir el apellido');
+        errors.push('Debe introducir el apellido');
         setError(userlastname, 'Debe introducir el apellido');   
     } else {    
         setSuccess(userlastname);
     }
 
     if (usremailvalue === '' || usremailvalue == null) {
-        errores.push('Debe introducir el email');   
+        errors.push('Debe introducir el email');   
         setError(useremail, 'Debe introducir el email');
     }
     else {    
@@ -58,25 +56,22 @@ function calcular(){
     }
 
     if(Number(nCantidad) <= 0) {
-        errores.push('Debe introducir una cantidad positiva'); 
+        errors.push('Debe introducir una cantidad positiva'); 
         setError(cantidadinput, 'Debe introducir una cantidad positiva');
     }
     else {    
         setSuccess(cantidadinput);
     }
     
-   
-
     if (nCategoria.value === '' || nCategoria.value === undefined || nCategoria.value === null || nCategoria.value === 'Elija una opción') {
-        errores.push('Debe elegir una categoria');
+        errors.push('Debe elegir una categoria');
         setError(combo, 'Debe introducir una categoría');
     }
     else {
         document.getElementById('categoriaerrmsg').innerText=''
     }
 
-
-    if (errores.length > 0) {
+    if (errors.length > 0) {
         //errorElement.innerHTML = errores.join(', ')   
         }
     else{
@@ -108,20 +103,26 @@ function calcular(){
         }
 };
 
-function borrar(){
+function clean(){
 
-    var tituloPagina = document.getElementById('totaltext')
-    tituloPagina.textContent="Total a Pagar: $ "
-    var titulo = document.getElementById("cantidadinput")
-    titulo.value=0
-    var titulo = document.getElementById("username")
-    titulo.value=""
-    var titulo = document.getElementById("userlastname")
-    titulo.value=""
-    var titulo = document.getElementById("useremail")
-    titulo.value=""
-    var titulo = document.getElementById("inputGroupSelect01")
-    titulo.value=""
-    var tituloPagina = document.getElementById('error')
-    tituloPagina.textContent=""
+    var title = document.getElementById('totaltext')
+    title.textContent="Total a Pagar: $ "
+    var inputElement = document.getElementById("cantidadinput")
+    inputElement.value=0
+    var inputElement = document.getElementById("username")
+    inputElement.value=""
+    var inputElement = document.getElementById("userlastname")
+    inputElement.value=""
+    var inputElement = document.getElementById("useremail")
+    inputElement.value=""
+    var inputElement = document.getElementById("inputGroupSelect01")
+    inputElement.value=""
+    var title = document.getElementById('error')
+    title.textContent=""
+}
+
+function setCategory(cOption) {
+    var optionElement = document.getElementById("inputGroupSelect01")
+    optionElement.value=cOption
+    
 }
